@@ -299,6 +299,7 @@ define logrotate::rule(
   case $maxage {
     'undef': {}
     /^\d+$/: {}
+    Integer: {}
     default: {
       fail("Logrotate::Rule[${name}]: maxage must be an integer")
     }
@@ -307,6 +308,7 @@ define logrotate::rule(
   case $minsize {
     'undef': {}
     /^\d+[kMG]?$/: {}
+    Integer: {}
     default: {
       fail("Logrotate::Rule[${name}]: minsize must match /\\d+[kMG]?/")
     }
@@ -315,6 +317,7 @@ define logrotate::rule(
   case $rotate {
     'undef': {}
     /^\d+$/: {}
+    Integer: {}
     default: {
       fail("Logrotate::Rule[${name}]: rotate must be an integer")
     }
@@ -331,6 +334,7 @@ define logrotate::rule(
   case $shredcycles {
     'undef': {}
     /^\d+$/: {}
+    Integer: {}
     default: {
       fail("Logrotate::Rule[${name}]: shredcycles must be an integer")
     }
@@ -339,6 +343,7 @@ define logrotate::rule(
   case $start {
     'undef': {}
     /^\d+$/: {}
+    Integer: {}
     default: {
       fail("Logrotate::Rule[${name}]: start must be an integer")
     }
