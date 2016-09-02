@@ -50,6 +50,10 @@
 #                   but not before the scheduled rotation time (optional).
 #                   The default units are bytes, append k, M or G for kilobytes,
 #                   megabytes and gigabytes respectively.
+# maxsize         - The String size above which file will be rotated, regardless of
+#                   time options.
+#                   The default units are bytes, append k, M or G for kilobytes,
+#                   megabytes and gigabytes respectively.
 # missingok       - A Boolean specifying whether logrotate should ignore missing
 #                   log files or issue an error (optional).
 # olddir          - A String path to a directory that rotated logs should be
@@ -139,6 +143,7 @@ define logrotate::rule(
                         $maillast        = 'undef',
                         $maxage          = 'undef',
                         $minsize         = 'undef',
+                        $maxsize         = 'undef',
                         $missingok       = 'undef',
                         $olddir          = 'undef',
                         $postrotate      = 'undef',
