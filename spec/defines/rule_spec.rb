@@ -189,7 +189,7 @@ describe 'logrotate::rule' do
           .with_content(/^  create$/)
       end
 
-      context 'and create_mode => 0777' do
+      context 'and create_mode => "0777"' do
         let(:params) {
           {
             :path        => '/var/log/foo.log',
@@ -281,7 +281,7 @@ describe 'logrotate::rule' do
           .with_content(/^  nocreate$/)
       end
 
-      context 'and create_mode => 0777' do
+      context 'and create_mode => "0777"' do
         let(:params) {
           {
             :path        => '/var/log/foo.log',
